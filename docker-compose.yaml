@@ -1,0 +1,18 @@
+version: "3.8"
+
+services:
+  database:
+    image: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=potsgrpwparsng
+  pgadmin:
+    image: dpage/pgadmin4:6.21
+    restart: always
+    ports:
+      - "8102:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: secret
+      PGADMIN_LISTEN_PORT: 80
