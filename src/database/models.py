@@ -2,7 +2,7 @@ from typing import Optional
 
 from pydantic import BaseModel
 from sqlalchemy import ForeignKey, String, Enum, func
-from sqlalchemy.orm import mapped_column, Mapped, relationship
+from sqlalchemy.orm import mapped_column, Mapped
 from datetime import datetime
 from src.database.base import Base
 from src.database.utils import as_form

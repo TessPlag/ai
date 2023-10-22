@@ -2,15 +2,23 @@ all: remove build run
 
 rerun: stop remove build run
 
+run-d: remove build run-detached
+
 build:
-	@sudo docker compose build
+	@docker compose build
 
 run:
-	@sudo docker compose up -d
+	@docker compose up --remove-orphans
+
+run-detached:
+	@docker compose up -d --remove-orphans
 
 remove:
-	@sudo docker compose down
-	@sudo docker compose rm
+	@docker compose down
+	@docker compose rm
 
 stop:
-	@sudo docker compose down
+	@docker compose down
+
+run-local:
+	PYTHONPATH=. python3 src/main.py
