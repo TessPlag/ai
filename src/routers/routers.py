@@ -7,8 +7,8 @@ import aiohttp
 import requests
 
 router = APIRouter(
-    prefix="questions",
-    tags="question"
+    prefix="/questions",
+    tags=["question"]
 )
 
 # def get_unique_question():

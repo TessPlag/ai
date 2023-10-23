@@ -1,13 +1,13 @@
 import uvicorn
 from fastapi import FastAPI
-from src.routers import routers
+from src.routers.routers import router
 
 app = FastAPI(
     title="AI"
 )
 
 app.include_router(
-    routers,
+    router,
     tags=["Question"]
 )
 
